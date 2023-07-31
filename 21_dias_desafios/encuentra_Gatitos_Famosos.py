@@ -8,11 +8,11 @@ Tu tarea es devolver una lista con los nombres de los gatos que tienen solo el m
 
 cats_social = [
   {
-    "name": "Bob",
+    "name": "Luna",
     "followers": [100,200, 300]
   },
   {
-    "name": "Luna",
+    "name": "Bob",
     "followers": [100,200, 300]
   },
   {
@@ -22,10 +22,16 @@ cats_social = [
     {
     "name": "Linda",
     "followers": [100, 34, 200]
-    }
+    },
+    {
+    "name": "joan",
+    "followers": [100,200, 300]
+  },
 ]
 
 
+"""
+priemra solucion con ayuda de copilot que funciona mal en los test
 def find_famous_cat(cats):
   cats_return = []
   max_followers = 0
@@ -37,6 +43,29 @@ def find_famous_cat(cats):
         elif followers == max_followers:
             cats_return.append(cat["name"])
   return cats_return
+  pass """
+
+# solucion de platzi
+def find_famous_cat(cats):
+  record = 0
+  winners = []
+  for i in cats:
+    count = 0
+    
+    for j in i['followers']:
+      count+=j
+    
+    if winners==[]:
+      winners.append(i['name'])
+      record = count    
+    elif count > record:
+      winners.pop()          
+      winners.append(i['name'])
+      record = count
+    elif count == record:
+      winners.append(i['name'])
+    
+  return winners
   pass
 
 print(find_famous_cat(cats_social))
