@@ -49,5 +49,33 @@ Output: {
   ]
 } 
 """
+students = [
+  {
+    "name": "Pedro",
+    "grades": [90, 87, 88, 90],
+  },
+  {
+    "name": "Jose",
+    "grades": [99, 71, 88, 96],
+  },
+  {
+    "name": "Maria",
+    "grades": [92, 81, 80, 96],
+  },
+]
 
 
+def get_student_average(students):
+  dict_return = {
+    "class_average": 0,
+    "students": []
+  }
+  for student in students:
+    average = sum(student["grades"])/len(student["grades"])
+    dict_return["students"].append({"name": student["name"], "average": round(average, 2)})
+    dict_return["class_average"] += average
+  dict_return["class_average"] = round(dict_return["class_average"]/len(students), 2)
+  return dict_return
+  pass
+
+print(get_student_average(students))
