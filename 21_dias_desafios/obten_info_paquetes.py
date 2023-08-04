@@ -35,3 +35,37 @@ Output:
     "Argentina": 3
   }
 } """
+
+packages = [
+  (1, 20, "Mexico"),
+  (2, 15.5, "Colombia"),
+  (3, 30, "Mexico"),
+  (4, 12, "Argentina"),
+  (5, 8.2, "Colombia"),
+  (6, 25, "Mexico"),
+  (7, 18.7, "Argentina"),
+  (8, 5, "Colombia"),
+  (9, 22.3, "Argentina"),
+  (10, 14.8, "Colombia")
+]
+
+def get_packages_info(packages):
+   dict_return = {
+      "total_weight": 0,
+      "destinations": {}
+   }
+  
+   weight = 0
+
+   for package in packages:
+      weight += package[1]
+      destino = package[2]
+      if destino in dict_return["destinations"]:
+         dict_return["destinations"][destino] += 1
+      else:
+         dict_return["destinations"][destino] = 1
+   dict_return["total_weight"] = round(weight, 2)
+   return dict_return
+   pass
+
+print(get_packages_info(packages))
