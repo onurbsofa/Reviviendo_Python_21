@@ -23,6 +23,20 @@ def count_letters(phrase):
   return dict_return
   pass
 
-print(count_letters("Hola mundo"))
+#mas simpple
+def count_letters1(phrase):
+  return {letra: phrase.count(letra) for letra in phrase}
+  pass
+
+#solucion sin comprension de diccionario
+def count_letters2(phrase):
+  dict_return = {}
+  for letra in phrase:
+    if letra in dict_return:
+      dict_return[letra] += 1
+    else:
+      dict_return[letra] = 1
+  return dict_return
+  pass
 
 
