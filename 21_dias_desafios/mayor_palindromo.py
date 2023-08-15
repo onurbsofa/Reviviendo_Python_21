@@ -35,5 +35,11 @@ def find_largest_palindrome(words):
 
 #intentar solucionar con list comprehension
 def find_largest_palindrome(words):
-  
-  pass
+   largest = 0
+   palindrome = ""
+   for word in words:
+      if word == word[::-1]:
+         if len(word) > largest:
+            palindrome = word
+            largest = len(word)
+   pass
