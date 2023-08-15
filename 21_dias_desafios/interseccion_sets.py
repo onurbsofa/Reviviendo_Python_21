@@ -33,5 +33,10 @@ find_set_intersection(sets)
 Output: set() """
 
 def find_set_intersection(sets):
-    intersec = {}
-    
+    if len(sets) == 0:
+        return set()
+    else:
+        inter = sets[0]
+        for i in range(1,len(sets)):
+            inter = inter.intersection(sets[i])
+        return inter
