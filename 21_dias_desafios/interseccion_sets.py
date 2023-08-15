@@ -40,3 +40,11 @@ def find_set_intersection(sets):
         for i in range(1,len(sets)):
             inter = inter.intersection(sets[i])
         return inter
+
+sets = [
+    {1, 2, 3, 4},
+    {2, 3, 4, 5},
+    {3, 4, 5, 6}
+]
+
+print(find_set_intersection(sets))
