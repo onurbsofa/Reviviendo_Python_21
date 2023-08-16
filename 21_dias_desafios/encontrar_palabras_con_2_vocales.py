@@ -23,5 +23,11 @@ words = ["hello", "Python", "world", "platzi"]
 def find_words_with_two_vowels(words):
     words_with_two_vowels = [palabra for palabra in words if len([letra for letra in palabra if letra in "aeiouAEIOU"]) == 2]
     return words_with_two_vowels
+    pass
+#solucion usando el metodo sum
+def find_words_with_two_vowels_sum(words):
+    words_with_two_vowels = [palabra for palabra in words if sum([1 for letra in palabra if letra in "aeiouAEIOU"]) == 2]
+    return words_with_two_vowels
 
 print(find_words_with_two_vowels(words))
+print(find_words_with_two_vowels_sum(words))
